@@ -1,0 +1,7 @@
+<div class="organism-history">
+	<h2>History</h2>
+	
+	{% for position in data.history %}
+		{% include "molecule-position.twig" with position %}
+	{% endfor %}
+</div>

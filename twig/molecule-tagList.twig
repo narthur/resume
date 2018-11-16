@@ -1,0 +1,5 @@
+<ul class="molecule-tagList">
+	{% for tag in tags %}
+		<li>{% include "atom-tag.twig" with { label: tag } %}</li>
+	{% endfor %}
+</ul>

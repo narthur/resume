@@ -1,0 +1,9 @@
+<div class="molecule-project">
+	<h4>
+		{% if url %}<a href="{{ url }}">{% endif %}{{ title }}{% if url %}</a>{% endif %}
+	</h4>
+	
+	{% include "molecule-tagList.twig" with {"tags": tags} %}
+	
+	<p>{{ description|raw }}</p>
+</div>

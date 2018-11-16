@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{ data.name }}</title>
+	<link rel="stylesheet" href="less/style.css">
+</head>
+<body>
+
+{% include "organism-header.twig" %}
+
+<div class="wrapper">
+	<p>Personal Philosophy Statement</p>
+	
+	{% include "organism-skills.twig" %}
+	{% include "organism-history.twig" %}
+</div>
+
+</body>
+</html>

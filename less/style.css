@@ -1,0 +1,106 @@
+body {
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+}
+h2 {
+  margin-top: 2rem;
+}
+a {
+  color: #3a6cae;
+}
+.wrapper {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.molecule-position h3 {
+  margin-bottom: 0.1em;
+}
+.molecule-position .molecule-position__dates {
+  margin-top: 0;
+}
+.molecule-project {
+  margin-left: calc(.5rem + 2vw);
+  margin-bottom: 2rem;
+}
+.molecule-project h4 {
+  margin-bottom: 0.2em;
+}
+.molecule-tagList {
+  padding-left: 0;
+  margin-top: 0;
+}
+.molecule-tagList li {
+  display: inline-block;
+}
+.organism-skills h2 {
+  margin-bottom: 0;
+}
+.atom-tag {
+  margin: 2px 0;
+}
+.atom-tag,
+.atom-tag .atom-tag__meta {
+  background-color: #e1effb;
+  color: rgba(0, 0, 0, 0.9);
+  border-radius: 3px;
+  padding: 3px 6px;
+  font-size: 0.8rem;
+  display: inline-block;
+  position: relative;
+}
+.atom-tag:hover .atom-tag__meta {
+  display: block;
+}
+.atom-tag .atom-tag__meta {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 1000;
+  width: 10rem;
+}
+.atom-tag .atom-tag__meta p {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+.atom-tag .atom-tag__meta p:last-child {
+  margin-bottom: 0;
+}
+.organism-header {
+  position: relative;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.9);
+}
+.organism-header h1 {
+  margin-bottom: 0;
+}
+.organism-header .organism-header__taglines {
+  margin-top: 0;
+}
+.organism-header::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/luca-bravo-217276-unsplash.jpg") 50%;
+  background-size: cover;
+  z-index: -10;
+}
+.organism-header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -5;
+}
+/*# sourceMappingURL=style.css.map */

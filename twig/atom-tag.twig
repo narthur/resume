@@ -1,0 +1,15 @@
+{% set tag = data.tags[label] %}
+{% set started = random([
+	"Embarked", "Began", "Started", "Took up", "Took the plunge", "Commenced", "Entered upon", "Got to it"
+]) %}
+
+<div class="atom-tag{% if tag %} atom-tag__extended{% endif %}">
+	{{ label }}
+	{% if tag %}
+		<div class="atom-tag__meta">
+			<p>{{ label }}</p>
+			<p>Mastery: {{ tag.mastery }}</p>
+			<p>{{ started }} in {{ tag.genesis }}{% if tag.genesis < 2012 %} when I was {{ tag.genesis - 1992 }} years old{% endif %}.</p>
+		</div>
+	{% endif %}
+</div>

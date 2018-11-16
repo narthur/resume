@@ -1,0 +1,31 @@
+.atom-tag {
+	margin: 2px 0;
+	&, .atom-tag__meta {
+		background-color: #e1effb;
+		color: rgba(0,0,0,.9);
+		border-radius: 3px;
+		padding: 3px 6px;
+		font-size: .8rem;
+		display: inline-block;
+		position: relative;
+	}
+	&:hover .atom-tag__meta {
+		display: block;
+	}
+	.atom-tag__meta {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		cursor: pointer;
+		z-index: 1000;
+		width: 10rem;
+		p {
+			margin-top: 0;
+			margin-bottom: .3em;
+		}
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

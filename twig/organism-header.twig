@@ -1,0 +1,11 @@
+<div class="organism-header">
+	<div class="wrapper">
+		<h1>{{ data.name }}</h1>
+		
+		<p class="organism-header__taglines">
+			{% for line in data.taglines %}
+				{{ line }}<br>
+			{% endfor %}
+		</p>
+	</div>
+</div>
