@@ -1,5 +1,22 @@
-<div class="organism-skills">
-	<h2>Skills</h2>
-
-	{% include "molecule-tagList.twig" with {"tags": data.skills} %}
-</div>
+<ul class="organism-skills">
+		{% set dates = 2000..2050 %}
+		{% for date in dates %}
+			{% set dateSkills = [] %}
+			{% for skill in data.skills if data.tags[skill].genesis == date %}
+				{% set dateSkills = dateSkills|merge([skill]) %}
+			{% endfor %}
+			
+			{% if dateSkills %}
+				<li>
+					<h2>{{ date }}</h2>
+					
+					<ul>
+					{% for skill in dateSkills %}
+						{% set tag = data.tags[skill] %}
+						<li>{{ skill }}</li>
+					{% endfor %}
+					</ul>
+				</li>
+			{% endif %}
+		{% endfor %}
+</ul>

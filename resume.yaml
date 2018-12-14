@@ -4,6 +4,44 @@ taglines:
   - Web Developer
   - Harriman, TN
 
+books:
+- title: Emotional Intelligence
+  cover: images/books/26329.jpg
+- title: The Design of Everyday Things
+  cover: images/books/17290807.jpg
+- title: "Cognitive Behavioral Therapy: Techniques for Retraining Your Brain"
+  cover: images/books/39067892.jpg
+- title: Design Systems
+  cover: images/books/35857970.jpg
+- title: "D`Sozo: Reversing the Worst Evil"
+  cover: images/books/18284147.jpg
+- title: Atomic Design
+  cover: images/books/29567165.jpg
+- title: The Brain that Changes Itself
+  cover: images/books/570172.jpg
+- title: "Algorithms to Live By: The Computer Science of Human Decisions"
+  cover: images/books/25666050.jpg
+- title: Mind, Character, and Personality
+  cover: images/books/MIND_CHARACTER_AND_PERSONALITY_VOL_1_FC_2048x@2x.jpg
+- title: The Willpower Instinct
+  cover: images/books/10865206.jpg
+- title: Designing for Behavior Change
+  cover: images/books/18167241.jpg
+- title: The Power of Habit
+  cover: images/books/12609433.jpg
+- title: The Lean Startup
+  cover: images/books/10127019.jpg
+- title: "Willpower: Rediscovering the Greatest Human Strength"
+  cover: images/books/11104933.jpg
+- title: Clean Code
+  cover: images/books/3735293.jpg
+- title: Change Anything
+  cover: images/books/9745641.jpg
+- title: The Cathedral & the Bazaar
+  cover: images/books/134825.jpg
+- title: The Other Brain
+  cover: images/books/7170963.jpg
+
 skills:
 - html
 - css
@@ -44,6 +82,13 @@ history:
   title: Web Developer
   start: August 2016
   projects:
+    - title: Theme Front-End Component Library
+      tags:
+        - twig
+        - less
+      description: I architected and implemented a component library that allowed all our themes to share the most
+        complex pieces of code such as our carousel and navigation system. In the process I was able to turn this code
+        into components which were much more robust and customizable for the themes using them.
     - title: CircleCI configuration
       tags:
         - docker
@@ -130,41 +175,38 @@ tags:
   css:
     genesis: 2006
     mastery: 95%
-  twig:
-    genesis: 2016
-    mastery: 98%
-  less:
-    genesis: 2016
-    mastery: 87%
+  design:
+    genesis: 2008
+    mastery: 20%
+  php:
+    genesis: 2009
+    mastery: 77%
+  javascript:
+    genesis: 2009
+    mastery: 25%
   tdd:
     genesis: 2011
     mastery: 40%
+  jquery:
+    genesis: 2011
+    mastery: 70%
+  scss:
+    genesis: 2011
+    mastery: 25%
+  git:
+    genesis: 2012
+    mastery: 70%
   wp-plugin-dev:
     genesis: 2013
     mastery: 50%
   wp-theme-dev:
     genesis: 2013
     mastery: 40%
-  jquery:
-    genesis: 2011
-    mastery: 70%
-  php:
-    genesis: 2009
-    mastery: 77%
-  git:
-    genesis: 2012
-    mastery: 70%
-  sketch:
-    genesis: 2017
-    mastery: 74%
-  docker:
-    genesis: 2016
-    mastery: 25%
+  mailgun:
+    genesis: 2013
+    mastery: 5%
   database-design:
     genesis: 2014
-    mastery: 25%
-  javascript:
-    genesis: 2009
     mastery: 25%
   bash:
     genesis: 2014
@@ -172,21 +214,24 @@ tags:
   phpunit:
     genesis: 2014
     mastery: 70%
-  circleci:
-    genesis: 2018
-    mastery: 20%
+  twig:
+    genesis: 2016
+    mastery: 98%
+  less:
+    genesis: 2016
+    mastery: 87%
+  docker:
+    genesis: 2016
+    mastery: 25%
   react:
     genesis: 2017
     mastery: 10%
   typescript:
     genesis: 2017
     mastery: 15%
-  scss:
-    genesis: 2011
-    mastery: 25%
-  design:
-    genesis: 2008
+  sketch:
+    genesis: 2017
+    mastery: 74%
+  circleci:
+    genesis: 2018
     mastery: 20%
-  mailgun:
-    genesis: 2013
-    mastery: 5%

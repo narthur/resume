@@ -1,0 +1,54 @@
+.organism-books {
+	@borderSize: 5px;
+	
+	margin-top: 3rem;
+	ul {
+		padding-left: 0;
+	}
+	li {
+		width: 100px;
+		height: 150px;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		display: inline-block;
+		border-left: @borderSize solid #737373;
+		border-bottom: @borderSize solid #b4b4b4;
+		position: relative;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			border-top: @borderSize/2 solid white;
+			border-left: @borderSize/2 solid white;
+			border-bottom: @borderSize/2 solid transparent;
+			border-right: @borderSize/2 solid transparent;
+			left: -@borderSize;
+		}
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			border-top: @borderSize/2 solid transparent;
+			border-left: @borderSize/2 solid transparent;
+			border-bottom: @borderSize/2 solid white;
+			border-right: @borderSize/2 solid white;
+			right: 0;
+			bottom: -@borderSize;
+		}
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			transition: all 400ms;
+			transform-origin: bottom left;
+		}
+		//&:hover img {
+		//	transform: skewY(-69deg) scaleX(-.2);
+		//}
+	}
+	
+}

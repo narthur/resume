@@ -1,0 +1,9 @@
+<div class="organism-books">
+	<ul>
+		{% for book in data.books %}
+			<li>
+				<img src="{{ book.cover }}" alt="{{ book.title }}" width="100">
+			</li>
+		{% endfor %}
+	</ul>
+</div>
