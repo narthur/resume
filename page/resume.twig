@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>{{ data.name }}</title>
-	<link rel="stylesheet" href="less/style.css?v={{ data.cssVersion }}">
-</head>
-<body>
+{% extends "layout-base.twig" %}
 
-{% include "organism-header.twig" %}
-
-<div class="wrapper">
+{% block content %}
 	<p>
 		The intersection between technology and human cognition has always fascinated me. What can we learn from the
 		brain that we can apply to technology? How does technology impact human behavior? How can we harness the power
@@ -21,20 +12,17 @@
 		built my first website using Yahoo! GeoCities when I was fourteen years old. Since that day, I've continued to
 		learn new skills related to web development and design.
 	</p>
-	
+
 	{% include "organism-skills.twig" %}
-	
+
 	<p>
 		Along side my interest in technology has grown an interest in the human mind and behavior. This started with an
 		interest in behavioral addictions. Over the years I've watched many lectures and read many books on the topics
 		of neurology, psychology, and behavioral therapy, as well as books that bridge the gap between these disciplines
 		and the world of technology.
 	</p>
-	
-	{% include "organism-books.twig" %}
-	
-	{% include "organism-history.twig" %}
-</div>
 
-</body>
-</html>
+	{% include "organism-books.twig" %}
+
+	{% include "organism-history.twig" %}
+{% endblock %}
