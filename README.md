@@ -5,21 +5,13 @@
 ```bash
 npm install less -g
 composer install
-chmod +x compile-twig.php
+chmod +x compile.php
 ```
 
-## Less Compilation
+## Compilation
 
 ```bash
-lessc less/style.less less/style.css
-```
-
-Add a file watcher in PhpStorm.
-
-## Twig Compilation
-
-```bash
-./compile-twig.php
+./compile.php
 ```
 
 Add a file watcher in PhpStorm.

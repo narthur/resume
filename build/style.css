@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0,0,0,0.9);
   margin: 0;
 }
 h2 {
@@ -15,7 +15,7 @@ a {
   padding: 1rem;
 }
 .molecule-position h3 {
-  margin-bottom: 0.1em;
+  margin-bottom: .1em;
 }
 .molecule-position .molecule-position__dates {
   margin-top: 0;
@@ -25,7 +25,7 @@ a {
   margin-bottom: 2rem;
 }
 .molecule-project h4 {
-  margin-bottom: 0.2em;
+  margin-bottom: .2em;
 }
 .molecule-tagList {
   padding-left: 0;
@@ -37,13 +37,13 @@ a {
 .atom-tag {
   margin: 2px 0;
   background-color: #e1effb;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0,0,0,0.9);
 }
 .atom-tag,
 .atom-tag .atom-tag__meta {
   border-radius: 3px;
   padding: 3px 6px;
-  font-size: 0.8rem;
+  font-size: .8rem;
   display: inline-block;
   position: relative;
 }
@@ -52,7 +52,7 @@ a {
 }
 .atom-tag .atom-tag__meta {
   background-color: #2d3a51;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.9);
   display: none;
   position: absolute;
   top: 0;
@@ -63,7 +63,7 @@ a {
 }
 .atom-tag .atom-tag__meta p {
   margin-top: 0;
-  margin-bottom: 0.3em;
+  margin-bottom: .3em;
 }
 .atom-tag .atom-tag__meta p:last-child {
   margin-bottom: 0;
@@ -119,7 +119,7 @@ a {
 .organism-header {
   position: relative;
   overflow: hidden;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.9);
 }
 .organism-header h1 {
   margin-bottom: 0;
@@ -147,7 +147,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0,0,0,0.7);
   z-index: -5;
 }
 .organism-skills {
@@ -171,9 +171,8 @@ a {
   margin-bottom: 3rem;
 }
 .organism-skills li li {
-  font-size: 0.8em;
+  font-size: .8em;
   transform: rotate(25deg);
   transform-origin: top left;
-  margin-top: 0.4em;
+  margin-top: .4em;
 }
-/*# sourceMappingURL=style.css.map */
