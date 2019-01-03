@@ -68,7 +68,38 @@ a {
 .atom-tag .atom-tag__meta p:last-child {
   margin-bottom: 0;
 }
+.organism-acc {
+  overflow: hidden;
+}
+.organism-acc img {
+  float: left;
+  margin-right: 1rem;
+}
+.organism-acc ul {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  position: relative;
+  left: -3rem;
+  width: calc(100% + 6rem);
+}
+.organism-acc ul li {
+  list-style-type: none;
+  margin-right: 1rem;
+  max-height: 700px;
+}
+.organism-acc ul li img {
+  min-width: 0;
+  max-width: 100%;
+  max-height: 100%;
+}
+.organism-acc ul li:last-child {
+  margin-right: 0;
+}
 .organism-books {
+  position: relative;
+  left: calc(( (100vw - 50rem) / -2 ) + 1rem);
+  width: 98vw;
   margin-top: 3rem;
 }
 .organism-books ul {

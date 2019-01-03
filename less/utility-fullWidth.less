@@ -1,0 +1,7 @@
+.utility-fullWidth() {
+  @padding: 1rem;
+
+  position: relative;
+  left: calc( ~"( (100vw - 50rem) / -2 ) + @{padding}" );
+  width: 100vw - ( @padding * 2 );
+}

@@ -1,0 +1,28 @@
+.organism-acc {
+  overflow: hidden;
+  img {
+    float: left;
+    margin-right: 1rem;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    position: relative;
+    left: -3rem;
+    width: calc( ~"100% + 6rem" );
+    li {
+      list-style-type: none;
+      margin-right: 1rem;
+      max-height: 700px;
+      img {
+        min-width: 0;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
