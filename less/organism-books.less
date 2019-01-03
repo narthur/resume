@@ -1,19 +1,25 @@
 .organism-books {
 	@borderSize: 5px;
+	@backgroundColor: @grayBleached;
 	
-	margin-top: 3rem;
+	.utility-fullWidth();
+	
+	background-color: @backgroundColor;
 	ul {
-		padding-left: 0;
+		display: grid;
+		grid-template-columns: repeat( auto-fit, minmax( 120px, 1fr ) );
+		padding: .5rem;
+		max-width: @contentMaxWidth;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	li {
-		width: 100px;
-		height: 150px;
-		margin-right: 10px;
-		margin-bottom: 10px;
-		display: inline-block;
+		margin: .5rem;
 		border-left: @borderSize solid #737373;
 		border-bottom: @borderSize solid #b4b4b4;
 		position: relative;
+		list-style-type: none;
+		padding-bottom: 130%;
 		&::before {
 			content: "";
 			display: block;
