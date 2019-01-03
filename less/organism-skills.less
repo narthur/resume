@@ -1,7 +1,11 @@
 .organism-skills {
-	display: flex;
-	flex-wrap: wrap;
+	@backgroundColor: @grayBleached;
 	
+	.utility-fullWidth();
+	
+	background-color: @backgroundColor;
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax( 150px, 1fr ) );
 	h2 {
 		font-size: 1.3em;
 		margin-bottom: 0;
@@ -12,15 +16,13 @@
 	}
 	li {
 		list-style-type: none;
+		text-align: center;
 	}
 	> li {
-		flex: 0 0 100px;
-		margin-bottom: 3rem;
+		margin-bottom: 1rem;
 	}
 	li li {
 		font-size: .8em;
-		transform: rotate(25deg);
-		transform-origin: top left;
 		margin-top: .4em;
 	}
 }

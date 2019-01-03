@@ -1,7 +1,11 @@
 .utility-fullWidth() {
-  @padding: 1rem;
-
-  position: relative;
-  left: calc( ~"( (100vw - 50rem) / -2 ) + @{padding}" );
-  width: 100vw - ( @padding * 2 );
+	@contentMaxWidth: 50rem;
+	
+	position: relative;
+	width: 100vw;
+	left: -1rem;
+	
+	@media ( min-width: @contentMaxWidth ) {
+		left: calc(~"(100vw - @{contentMaxWidth}) / -2");
+	}
 }
