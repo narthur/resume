@@ -193,13 +193,13 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(200px,.33fr));
   padding-left: 0;
-  margin: -0.5rem;
+  margin: -2.5px;
 }
 .organism-projects ul > li {
   position: relative;
   color: white;
   list-style-type: none;
-  margin: .5rem;
+  margin: 2.5px;
   padding: 1rem;
   display: flex;
   align-items: flex-end;

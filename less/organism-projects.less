@@ -2,17 +2,18 @@
 	@textColor: @white;
 	@overlayColor: contrast( @textColor, @black, @white );
 	@overlayOpacity: 60%;
+	@gutter: 5px;
 	
 	ul {
 		display: grid;
 		grid-template-columns: repeat( auto-fit, minmax( 200px, .33fr ) );
 		padding-left: 0;
-		margin: -.5rem;
+		margin: -(@gutter / 2);
 		> li {
 			position: relative;
 			color: @textColor;
 			list-style-type: none;
-			margin: .5rem;
+			margin: @gutter / 2;
 			padding: 1rem;
 			display: flex;
 			align-items: flex-end;

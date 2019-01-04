@@ -80,7 +80,7 @@ skills:
 projects:
 - title: WordPress Plugin
   url: https://github.com/AVORG/wp-avorg-plugin
-  image: https://picsum.photos/400?random&bust=1
+  image: ../images/portfolio/av-plugin-list.png
   tags:
   - wp-plugin-dev
   - php
@@ -130,7 +130,7 @@ projects:
   - twig
   description: I worked with the customer to design and implement this custom theme.
 - title: MyMissionCenter theme
-  image: https://picsum.photos/400?random&bust=5
+  image: ../images/portfolio/mmc-theme.png
   tags:
   - less
   - twig
