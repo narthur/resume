@@ -1,0 +1,44 @@
+.organism-projects {
+	@textColor: @white;
+	@overlayColor: contrast( @textColor, @black, @white );
+	@overlayOpacity: 60%;
+	
+	ul {
+		display: grid;
+		grid-template-columns: repeat( auto-fit, minmax( 200px, .33fr ) );
+		padding-left: 0;
+		margin: -.5rem;
+		> li {
+			position: relative;
+			color: @textColor;
+			list-style-type: none;
+			margin: .5rem;
+			padding: 1rem;
+			display: flex;
+			align-items: flex-end;
+			min-height: 5rem;
+			&::before, &::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			&::before {
+				background-image: var( --image );
+				background-size: cover;
+				z-index: -10;
+				background-position: 0 0;
+				transition: background-position 3000ms;
+			}
+			&::after {
+				background-color: fade( @overlayColor, @overlayOpacity );
+				z-index: -5;
+			}
+			&:hover::before {
+				background-position: 0 100%;
+			}
+		}
+	}
+}

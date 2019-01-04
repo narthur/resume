@@ -2,9 +2,9 @@
 	<h3>{{ title }} for {{ organization }}</h3>
 	<p class="molecule-position__dates">{{ start }} to {{ end|default("present") }}</p>
 	
-	{% if description %}<p>{{ description }}</p>{% endif %}
+	{#{% if description %}<p>{{ description }}</p>{% endif %}#}
 	
-	{% for project in projects %}
-		{% include "molecule-project.twig" with project %}
-	{% endfor %}
+	{#{% for project in projects %}#}
+		{#{% include "molecule-project.twig" with project %}#}
+	{#{% endfor %}#}
 </div>

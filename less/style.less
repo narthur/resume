@@ -6,7 +6,7 @@
 @grayLight: transparent;
 @grayMed: transparent;
 @grayDim: transparent;
-@grayDark: transparent;
+@grayDark: #2d2d2d;
 @black: rgba( 0, 0, 0, .9 );
 
 
@@ -30,15 +30,6 @@ a {
 	padding: 1rem;
 }
 
-.molecule-position {
-	h3 {
-		margin-bottom: .1em;
-	}
-	.molecule-position__dates {
-		margin-top: 0;
-	}
-}
-
 .molecule-project {
 	margin-left: @indent-width;
 	margin-bottom: 2rem;
@@ -59,7 +50,10 @@ a {
 
 @import "atom-tag";
 
+@import "molecule-position";
+
 @import "organism-acc";
 @import "organism-books";
 @import "organism-header";
+@import "organism-projects";
 @import "organism-skills";

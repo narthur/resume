@@ -77,81 +77,105 @@ skills:
 - javascript
 - bash
 
+projects:
+- title: WordPress Plugin
+  url: https://github.com/AVORG/wp-avorg-plugin
+  image: https://picsum.photos/400?random&bust=1
+  tags:
+  - wp-plugin-dev
+  - php
+  - phpunit
+  - twig
+  - tdd
+  - docker
+  description: I’m currently working a series of contracts for AudioVerse building a WordPress plugin which
+    reproduces the functionality of their current website. Goals are to make the website easier to update for their
+    non-technical staff and to eventually take advantage of PWA browser APIs to reduce their reliance on maintaining
+    separate mobile apps. Locally I use Docker as <a href='https://github.com/AVORG/wp-avorg-dev'>my development
+    environment</a>.
+- title: Theme Front-End Component Library
+  image: https://picsum.photos/400?random&bust=2
+  tags:
+  - twig
+  - less
+  description: I architected and implemented a component library that allowed all our themes to share the most
+    complex pieces of code such as our carousel and navigation system. In the process I was able to turn this code
+    into components which were much more robust and customizable for the themes using them.
+- title: CircleCI configuration
+  tags:
+  - docker
+  - circleci
+  description: I was responsible for configuring CircleCI to run tests for our internal CMS’ codebase, along with
+    configuration for each of the themes we make available to our customers. The CI configuration for the CMS uses
+    a dockerfile which builds to the Docker Hub, which has greatly increased the speed of our CI jobs.
+- title: ACC1 system
+  url: http://random.adventistchurch.org/
+  image: ../images/portfolio/acc_large.png
+  tags:
+  - less
+  - twig
+  - php
+  - tdd
+  - database-design
+  description: I rebuilt the system SimpleUpdates maintains to generate free static websites for churches who don’t
+    currently have a website. This involved setting up a database, router, and a system to talk to eAdventist’s API
+    to retrieve churches that didn’t have a website, register them in the database so we would serve a website for
+    them, and then notify eAdventist so they could update their entry for that church in their database.
+- title: Lake Union Herald design & theme
+  url: https://www.lakeunionherald.org/?_bare
+  image: ../images/portfolio/luh.png
+  tags:
+  - sketch
+  - less
+  - twig
+  description: I worked with the customer to design and implement this custom theme.
+- title: MyMissionCenter theme
+  image: https://picsum.photos/400?random&bust=5
+  tags:
+  - less
+  - twig
+  description: This theme was designed by Evan Bambrick. I converted his static comps into a theme for our in-house
+    CMS.
+- title: MyMissionCenter product
+  image: ../images/portfolio/mmc-people.png
+  tags:
+  - react
+  - typescript
+  - scss
+  description: My role in this project was to design user interfaces and then build the React web components needed
+    to implement them.
+- title: Adventist School Connect theme
+  image: ../images/portfolio/ivy-theme.png
+  tags:
+  - twig
+  - less
+  - design
+  description: I both designed and built this theme.
+- title: WordPress plugin
+  url: https://github.com/HabitFree/wp-accountability
+  image: ../images/portfolio/habitfree.org_goals_.png
+  tags:
+  - php
+  - tdd
+  - mailgun
+  - wp-plugin-dev
+- title: WordPress theme
+  url: https://github.com/HabitFree/wp-hf-theme
+  image: ../images/portfolio/hf-theme.png
+  tags:
+  - php
+  - css
+  - wp-theme-dev
+- title: Young Disciple store
+  image: ../images/portfolio/yd-store.jpg
+
 history:
 - organization: AudioVerse
   title: Contractor
   start: March 2018
-  projects:
-  - title: WordPress Plugin
-    url: https://github.com/AVORG/wp-avorg-plugin
-    tags:
-    - wp-plugin-dev
-    - php
-    - phpunit
-    - twig
-    - tdd
-    - docker
-    description: I’m currently working a series of contracts for AudioVerse building a WordPress plugin which
-      reproduces the functionality of their current website. Goals are to make the website easier to update for their
-      non-technical staff and to eventually take advantage of PWA browser APIs to reduce their reliance on maintaining
-      separate mobile apps. Locally I use Docker as <a href='https://github.com/AVORG/wp-avorg-dev'>my development
-      environment</a>.
 - organization: SimpleUpdates.com
   title: Web Developer
   start: August 2016
-  projects:
-    - title: Theme Front-End Component Library
-      tags:
-        - twig
-        - less
-      description: I architected and implemented a component library that allowed all our themes to share the most
-        complex pieces of code such as our carousel and navigation system. In the process I was able to turn this code
-        into components which were much more robust and customizable for the themes using them.
-    - title: CircleCI configuration
-      tags:
-        - docker
-        - circleci
-      description: I was responsible for configuring CircleCI to run tests for our internal CMS’ codebase, along with
-        configuration for each of the themes we make available to our customers. The CI configuration for the CMS uses
-        a dockerfile which builds to the Docker Hub, which has greatly increased the speed of our CI jobs.
-    - title: ACC1 system
-      url: http://random.adventistchurch.org/
-      tags:
-        - less
-        - twig
-        - php
-        - tdd
-        - database-design
-      description: I rebuilt the system SimpleUpdates maintains to generate free static websites for churches who don’t
-        currently have a website. This involved setting up a database, router, and a system to talk to eAdventist’s API
-        to retrieve churches that didn’t have a website, register them in the database so we would serve a website for
-        them, and then notify eAdventist so they could update their entry for that church in their database.
-    - title: Lake Union Herald design & theme
-      url: https://www.lakeunionherald.org/?_bare
-      tags:
-        - sketch
-        - less
-        - twig
-      description: I worked with the customer to design and implement this custom theme.
-    - title: MyMissionCenter theme
-      tags:
-        - less
-        - twig
-      description: This theme was designed by Evan Bambrick. I converted his static comps into a theme for our in-house
-        CMS.
-    - title: MyMissionCenter product
-      tags:
-        - react
-        - typescript
-        - scss
-      description: My role in this project was to design user interfaces and then build the React web components needed
-        to implement them.
-    - title: Adventist School Connect theme
-      tags:
-        - twig
-        - less
-        - design
-      description: I both designed and built this theme.
 - organization: Prism Web Design, LLC
   title: Web Developer
   start: May 2016
@@ -162,20 +186,6 @@ history:
   title: Founder
   start: January 2013
   description: My responsibilities include web, product, and content development; and marketing.
-  projects:
-    - title: WordPress plugin
-      url: https://github.com/HabitFree/wp-accountability
-      tags:
-        - php
-        - tdd
-        - mailgun
-        - wp-plugin-dev
-    - title: WordPress theme
-      url: https://github.com/HabitFree/wp-hf-theme
-      tags:
-        - php
-        - css
-        - wp-theme-dev
 - organization: Young Disciple Ministries
   title: Layout Intern
   start: July 2011

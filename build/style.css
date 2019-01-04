@@ -14,12 +14,6 @@ a {
   margin: 0 auto;
   padding: 1rem;
 }
-.molecule-position h3 {
-  margin-bottom: .1em;
-}
-.molecule-position .molecule-position__dates {
-  margin-top: 0;
-}
 .molecule-project {
   margin-left: calc(.5rem + 2vw);
   margin-bottom: 2rem;
@@ -67,6 +61,12 @@ a {
 }
 .atom-tag .atom-tag__meta p:last-child {
   margin-bottom: 0;
+}
+.molecule-position h3 {
+  margin-bottom: .1em;
+}
+.molecule-position .molecule-position__dates {
+  margin-top: 0;
 }
 .organism-acc {
   overflow: hidden;
@@ -188,6 +188,45 @@ a {
   height: 100%;
   background-color: rgba(0,0,0,0.7);
   z-index: -5;
+}
+.organism-projects ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,.33fr));
+  padding-left: 0;
+  margin: -0.5rem;
+}
+.organism-projects ul > li {
+  position: relative;
+  color: white;
+  list-style-type: none;
+  margin: .5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  min-height: 5rem;
+}
+.organism-projects ul > li::before,
+.organism-projects ul > li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.organism-projects ul > li::before {
+  background-image: var(--image);
+  background-size: cover;
+  z-index: -10;
+  background-position: 0 0;
+  transition: background-position 3000ms;
+}
+.organism-projects ul > li::after {
+  background-color: rgba(0,0,0,0.6);
+  z-index: -5;
+}
+.organism-projects ul > li:hover::before {
+  background-position: 0 100%;
 }
 .organism-skills {
   position: relative;

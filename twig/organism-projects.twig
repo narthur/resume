@@ -1,0 +1,11 @@
+<div class="organism-projects">
+	<h2>Projects</h2>
+	
+	<ul>
+		{% for project in data.projects %}
+			<li{% if project.image %} style="--image: url({{ project.image }});"{% endif %}>
+				{{ project.title }}
+			</li>
+		{% endfor %}
+	</ul>
+</div>
