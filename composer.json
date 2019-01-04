@@ -6,6 +6,6 @@
         "phpunit/phpunit": "^7"
     },
     "autoload": {
-        "psr-4": { "Resume\\": [ "class/" ] }
+        "psr-4": { "Resume\\": [ "class/", "test/" ] }
     }
 }

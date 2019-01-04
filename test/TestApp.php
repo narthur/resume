@@ -1,6 +1,6 @@
 <?php
 
-final class TestApp extends \PHPUnit\Framework\TestCase
+final class TestApp extends \Resume\TestCase
 {
 	public function testExists()
 	{
