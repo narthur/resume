@@ -94,20 +94,13 @@ projects:
     separate mobile apps. Locally I use Docker as <a href='https://github.com/AVORG/wp-avorg-dev'>my development
     environment</a>.
 - title: Theme Front-End Component Library
-  image: https://picsum.photos/400?random&bust=2
+  image: ../images/portfolio/ThemePatternLibrary.png
   tags:
   - twig
   - less
   description: I architected and implemented a component library that allowed all our themes to share the most
     complex pieces of code such as our carousel and navigation system. In the process I was able to turn this code
     into components which were much more robust and customizable for the themes using them.
-- title: CircleCI configuration
-  tags:
-  - docker
-  - circleci
-  description: I was responsible for configuring CircleCI to run tests for our internal CMS’ codebase, along with
-    configuration for each of the themes we make available to our customers. The CI configuration for the CMS uses
-    a dockerfile which builds to the Docker Hub, which has greatly increased the speed of our CI jobs.
 - title: ACC1 system
   url: http://random.adventistchurch.org/
   image: ../images/portfolio/acc_large.png

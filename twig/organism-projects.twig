@@ -4,7 +4,9 @@
 	<ul>
 		{% for project in data.projects %}
 			<li{% if project.image %} style="--image: url({{ project.image }});"{% endif %}>
+				{% if project.url %}<a href="{{ project.url }}">{% endif %}
 				{{ project.title }}
+				{% if project.url %}</a>{% endif %}
 			</li>
 		{% endfor %}
 	</ul>

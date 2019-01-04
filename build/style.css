@@ -205,6 +205,18 @@ a {
   align-items: flex-end;
   min-height: 5rem;
 }
+.organism-projects ul > li a {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
 .organism-projects ul > li::before,
 .organism-projects ul > li::after {
   content: "";
@@ -218,15 +230,10 @@ a {
   background-image: var(--image);
   background-size: cover;
   z-index: -10;
-  background-position: 0 0;
-  transition: background-position 3000ms;
 }
 .organism-projects ul > li::after {
   background-color: rgba(0,0,0,0.6);
   z-index: -5;
-}
-.organism-projects ul > li:hover::before {
-  background-position: 0 100%;
 }
 .organism-skills {
   position: relative;
