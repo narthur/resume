@@ -78,7 +78,7 @@ skills:
 - bash
 
 projects:
-- title: WordPress Plugin
+- title: AudioVerse WordPress Plugin
   url: https://github.com/AVORG/wp-avorg-plugin
   image: ../images/portfolio/av-plugin-list.png
   tags:
@@ -151,7 +151,7 @@ projects:
   - less
   - design
   description: I both designed and built this theme.
-- title: WordPress plugin
+- title: HabitFree WordPress plugin
   url: https://github.com/HabitFree/wp-accountability
   image: ../images/portfolio/habitfree.org_goals_.png
   tags:
@@ -159,7 +159,7 @@ projects:
   - tdd
   - mailgun
   - wp-plugin-dev
-- title: WordPress theme
+- title: HabitFree WordPress theme
   url: https://github.com/HabitFree/wp-hf-theme
   image: ../images/portfolio/hf-theme.png
   tags:
