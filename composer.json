@@ -1,11 +1,17 @@
 {
-    "require": {
-        "twig/twig": "^2.0",
-        "symfony/yaml": "^4.1",
-        "leafo/lessphp": "0.4.0",
-        "phpunit/phpunit": "^7"
-    },
-    "autoload": {
-        "psr-4": { "Resume\\": [ "class/", "test/" ] }
-    }
+  "require": {
+	"twig/twig": "^2.0",
+	"symfony/yaml": "^4.1",
+	"leafo/lessphp": "0.4.0",
+	"phpunit/phpunit": "^7"
+  },
+  "autoload": {
+	"psr-4": {
+	  "Resume\\": [
+		"class/",
+		"test/",
+		"test/stub/"
+	  ]
+	}
+  }
 }

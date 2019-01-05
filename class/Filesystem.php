@@ -1,4 +1,4 @@
-<?
+<?php
 
 namespace Resume;
 
@@ -18,13 +18,14 @@ class Filesystem
 	 */
 	public function deleteTree($dir)
 	{
-		$result = system("rm -r $dir/*");
-		
-		if ($result === false) {
-			throw new \Exception("Failed to delete directory");
-		}
-		
-		return $result;
+		// DANGEROUS CODE; ADD EXCEPTIONS
+//		$result = system("rm -r $dir/*");
+//
+//		if ($result === false) {
+//			throw new \Exception("Failed to delete directory");
+//		}
+//
+//		return $result;
 	}
 	
 	public function fileForceContents($path, $contents)
