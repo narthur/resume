@@ -13,9 +13,9 @@ class Twig {
     $this->twig = new \Twig_Environment($loader, array("debug" => true));
   }
 
-  public function renderTemplate($template, $data, $outPath) {
+  public function renderTemplate($template, $data) {
     $template = $this->twig->load($template);
-    $html = $template->render(["data" => $data]);
-    file_put_contents($outPath, $html);
+    
+    return $template->render(["data" => $data]);
   }
 }

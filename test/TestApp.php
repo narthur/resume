@@ -71,20 +71,10 @@ final class TestApp extends \Resume\TestCase
 		$this->stubYaml->assertMethodCalledWith("parse", "yaml");
 	}
 	
-	public function testGetsPages()
-	{
-		$this->app->compile();
-		
-		$this->stubFilesystem->assertMethodCalledWith(
-			"scanDir",
-			BASEDIR . "/page"
-		);
-	}
-	
 	public function testCompilesPages()
 	{
-		$this->stubFilesystem->setReturnValue("scanDir", [
-			"page/page.twig"
+		$this->stubFilesystem->setReturnValue("findPathsMatchingRecursive", [
+			BASEDIR . "/page/page.twig"
 		]);
 		
 		$this->stubYaml->setReturnValue("parse", ["DATA"]);
@@ -93,9 +83,8 @@ final class TestApp extends \Resume\TestCase
 		
 		$this->stubTwig->assertMethodCalledWith(
 			"renderTemplate",
-			"page/page.twig",
-			["DATA"],
-			BASEDIR . "/build/page.html"
+			"page.twig",
+			["DATA"]
 		);
 	}
 	
@@ -110,8 +99,52 @@ final class TestApp extends \Resume\TestCase
 		$this->stubTwig->assertMethodCalledWith(
 			"renderTemplate",
 			"layout-index.twig",
-			["pages" => ["build/page.html"]],
-			BASEDIR . "/index.html"
+			["pages" => ["build/page.html"]]
+		);
+	}
+	
+	public function testCompilesSubPages()
+	{
+		$this->stubFilesystem->setReturnValue("findPathsMatchingRecursive", [
+			BASEDIR . "/page/sub/page.twig"
+		]);
+		
+		$this->app->compile();
+		
+		$this->stubTwig->assertMethodCalledWith(
+			"renderTemplate",
+			"sub/page.twig",
+			null
+		);
+	}
+	
+	public function testSavesCompiledPages()
+	{
+		$this->stubFilesystem->setReturnValue("findPathsMatchingRecursive", [
+			BASEDIR . "/page/page.twig"
+		]);
+		
+		$this->stubTwig->setReturnValue("renderTemplate", "rendered_template");
+		
+		$this->app->compile();
+		
+		$this->stubFilesystem->assertMethodCalledWith(
+			"fileForceContents",
+			BASEDIR . "/build/./page.html",
+			"rendered_template"
+		);
+	}
+	
+	public function testSavesIndex()
+	{
+		$this->stubTwig->setReturnValue("renderTemplate", "rendered_template");
+		
+		$this->app->compile();
+		
+		$this->stubFilesystem->assertMethodCalledWith(
+			"fileForceContents",
+			BASEDIR . "/index.html",
+			"rendered_template"
 		);
 	}
 }

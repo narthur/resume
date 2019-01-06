@@ -45,13 +45,19 @@ class App
 	 */
 	private function compilePages($data): void
 	{
-		$twigPages = $this->filesystem->scanDir(BASEDIR . "/page");
+		$twigPages = $this->filesystem->findPathsMatchingRecursive(
+			BASEDIR . "/page",
+			"/\.twig$/"
+		);
 		
 		array_map(function ($twigPage) use ($data) {
 			$filename = pathinfo($twigPage, PATHINFO_FILENAME);
-			$outPath = BASEDIR . "/build/$filename.html";
+			$relativePath = str_replace(BASEDIR . "/page/", "", $twigPage);
+			$relativeDir = pathinfo($relativePath, PATHINFO_DIRNAME);
+			$outPath = BASEDIR . "/build/$relativeDir/$filename.html";
 			
-			$this->twig->renderTemplate($twigPage, $data, $outPath);
+			$html = $this->twig->renderTemplate($relativePath, $data);
+			$this->filesystem->fileForceContents($outPath, $html);
 		}, $twigPages ?? []);
 	}
 	
@@ -59,10 +65,11 @@ class App
 	{
 		$buildPages = $this->filesystem->scanDir(BASEDIR . "/build");
 		
-		$this->twig->renderTemplate(
+		$html = $this->twig->renderTemplate(
 			"layout-index.twig",
-			["pages" => $buildPages],
-			BASEDIR . "/index.html"
+			["pages" => $buildPages]
 		);
+		
+		$this->filesystem->fileForceContents(BASEDIR . "/index.html", $html);
 	}
 }
