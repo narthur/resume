@@ -61,4 +61,57 @@ final class TestApp extends \Resume\TestCase
 			BASEDIR . "/resume.yaml"
 		);
 	}
+	
+	public function testParsesYaml()
+	{
+		$this->stubFilesystem->setReturnValue("getFile", "yaml");
+		
+		$this->app->compile();
+		
+		$this->stubYaml->assertMethodCalledWith("parse", "yaml");
+	}
+	
+	public function testGetsPages()
+	{
+		$this->app->compile();
+		
+		$this->stubFilesystem->assertMethodCalledWith(
+			"scanDir",
+			BASEDIR . "/page"
+		);
+	}
+	
+	public function testCompilesPages()
+	{
+		$this->stubFilesystem->setReturnValue("scanDir", [
+			"page/page.twig"
+		]);
+		
+		$this->stubYaml->setReturnValue("parse", ["DATA"]);
+		
+		$this->app->compile();
+		
+		$this->stubTwig->assertMethodCalledWith(
+			"renderTemplate",
+			"page/page.twig",
+			["DATA"],
+			BASEDIR . "/build/page.html"
+		);
+	}
+	
+	public function testCompilesIndex()
+	{
+		$this->stubFilesystem->setReturnValue("scanDir", [
+			"build/page.html"
+		]);
+		
+		$this->app->compile();
+		
+		$this->stubTwig->assertMethodCalledWith(
+			"renderTemplate",
+			"layout-index.twig",
+			["pages" => ["build/page.html"]],
+			BASEDIR . "/index.html"
+		);
+	}
 }

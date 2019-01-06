@@ -15,7 +15,7 @@ class Factory
 	
 	/**
 	 * @param $class
-	 * @return null
+	 * @return mixed
 	 * @throws \ReflectionException
 	 */
 	public function get($class)
