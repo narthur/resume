@@ -21,5 +21,7 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 		$this->stubFilesystem = new StubFilesystem($this);
 		
 		$this->factory = new Factory();
+		
+		$this->factory->injectObject($this->stubFilesystem);
 	}
 }

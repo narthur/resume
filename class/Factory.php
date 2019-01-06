@@ -6,27 +6,23 @@ class Factory
 {
 	private $namespace = __NAMESPACE__;
 	
-	public function injectObject($object) {
+	private $objects = [];
 	
+	public function injectObject($object) {
+		$this->objects[] = $object;
 	}
 	
 	/**
-	 * @param $method
-	 * @param array $args
+	 * @param $class
 	 * @return null
 	 * @throws \ReflectionException
 	 */
-	public function __call($method, $args = [])
+	public function get($class)
 	{
-		$isGet = substr($method, 0, 3) === "get";
-		if (!$isGet) return null;
-		$name = substr($method, 3, strlen($method) - 3);
-		$qualifiedName = $this->getQualifiedName($name);
+		$qualifiedName = $this->getQualifiedName($class);
 		$dependencyNames = $this->getDependencyNames($qualifiedName);
-		$dependencies = array_map(function ($dependencyName) {
-			$methodName = "get$dependencyName";
-			return $this->$methodName();
-		}, $dependencyNames);
+		$dependencies = array_map([$this, "get"], $dependencyNames);
+		
 		return $this->getObject($qualifiedName, ...$dependencies);
 	}
 	
@@ -40,6 +36,7 @@ class Factory
 		$reflection = new \ReflectionClass($className);
 		$constructor = $reflection->getConstructor();
 		$params = ($constructor) ? $constructor->getParameters() : [];
+		
 		return array_map(function (\ReflectionParameter $param) {
 			$name = $param->getClass()->name;
 			return $this->getQualifiedName($name);
@@ -53,10 +50,8 @@ class Factory
 	private function getQualifiedName($name)
 	{
 		$isQualified = strpos(trim($name, "\\"), "$this->namespace\\") === 0;
-		if ($isQualified) return $name;
-		$isNamespacedMethod = strpos($name, "_") !== false;
-		if ($isNamespacedMethod) return $this->convertNamespacedMethodNameToQualifiedName($name);
-		return "\\$this->namespace\\$name";
+		
+		return $isQualified ? $name : "\\$this->namespace\\$name";
 	}
 	
 	/**
@@ -66,38 +61,18 @@ class Factory
 	 */
 	private function getObject($class, ...$dependencies)
 	{
-		$propertyName = $this->getPropertyName($class);
-		if (!isset($this->$propertyName)) $this->$propertyName = new $class(...$dependencies);
-		return $this->$propertyName;
-	}
-	
-	/**
-	 * @param $class
-	 * @return string
-	 */
-	private function getPropertyName($class)
-	{
-		return lcfirst($this->getSimpleClassName($class));
-	}
-	
-	/**
-	 * @param $name
-	 * @return string
-	 */
-	private function getSimpleClassName($name)
-	{
-		$nameFragments = explode("\\", $name);
-		return end($nameFragments);
-	}
-	
-	/**
-	 * @param $methodName
-	 * @return string
-	 */
-	private function convertNamespacedMethodNameToQualifiedName($methodName)
-	{
-		$fragments = explode("_", $methodName);
-		$partiallyQualifiedName = implode("\\", $fragments);
-		return "\\$this->namespace\\$partiallyQualifiedName";
+		$matchingObjects = array_filter($this->objects, function($object) use($class) {
+			return is_a($object, $class);
+		});
+		
+		if ($matchingObjects) {
+			return end($matchingObjects);
+		}
+		
+		$object = new $class(...$dependencies);
+		
+		$this->objects[] = $object;
+		
+		return $object;
 	}
 }

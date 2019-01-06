@@ -14,6 +14,6 @@ class App
 	
 	public function compile()
 	{
-		$this->filesystem->deleteTree("");
+		$this->filesystem->deleteTree(BASEDIR . "/tmp");
 	}
 }

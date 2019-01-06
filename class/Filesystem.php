@@ -18,14 +18,31 @@ class Filesystem
 	 */
 	public function deleteTree($dir)
 	{
-		// DANGEROUS CODE; ADD EXCEPTIONS
-//		$result = system("rm -r $dir/*");
-//
-//		if ($result === false) {
-//			throw new \Exception("Failed to delete directory");
-//		}
-//
-//		return $result;
+		if (!$dir) {
+			throw new \Exception("Directory path required");
+		}
+		
+		if (!BASEDIR) {
+			throw new \Exception("Basedir not defined");
+		}
+		
+		$realPath = realpath($dir);
+		
+		if (!$realPath) {
+			throw new \Exception("Could not resolve directory to be deleted");
+		}
+		
+		if (substr($realPath, 0, strlen(BASEDIR)) !== BASEDIR) {
+			throw new \Exception("Specified directory not inside basedir");
+		}
+		
+		$result = system("rm -r $dir/*");
+
+		if ($result === false) {
+			throw new \Exception("Failed to delete directory");
+		}
+
+		return $result;
 	}
 	
 	public function fileForceContents($path, $contents)
