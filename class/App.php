@@ -7,6 +7,9 @@ class App
 	/** @var Filesystem $filesystem */
 	private $filesystem;
 	
+	/** @var Page\Index $index */
+	private $index;
+	
 	/** @var Less $less */
 	private $less;
 	
@@ -16,9 +19,16 @@ class App
 	/** @var Yaml $yaml */
 	private $yaml;
 	
-	public function __construct(Filesystem $filesystem, Less $less, Twig $twig, Yaml $yaml)
+	public function __construct(
+		Filesystem $filesystem,
+		Page\Index $index,
+		Less $less,
+		Twig $twig,
+		Yaml $yaml
+	)
 	{
 		$this->filesystem = $filesystem;
+		$this->index = $index;
 		$this->less = $less;
 		$this->twig = $twig;
 		$this->yaml = $yaml;
@@ -63,13 +73,6 @@ class App
 	
 	private function compileIndex(): void
 	{
-		$buildPages = $this->filesystem->scanDir(BASEDIR . "/build");
-		
-		$html = $this->twig->renderTemplate(
-			"layout-index.twig",
-			["pages" => $buildPages]
-		);
-		
-		$this->filesystem->fileForceContents(BASEDIR . "/index.html", $html);
+		$this->index->compile();
 	}
 }
