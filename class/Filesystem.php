@@ -12,13 +12,13 @@ class Filesystem
 	}
 	
 	/**
-	 * @param $dir
+	 * @param $projectRelativePath
 	 * @return bool|string
 	 * @throws \Exception
 	 */
-	public function deleteTree($dir)
+	public function deleteTree($projectRelativePath)
 	{
-		if (!$dir) {
+		if (!$projectRelativePath) {
 			throw new \Exception("Directory path required");
 		}
 		
@@ -26,7 +26,7 @@ class Filesystem
 			throw new \Exception("Basedir not defined");
 		}
 		
-		$realPath = realpath($dir);
+		$realPath = realpath(BASEDIR . "/$projectRelativePath");
 		
 		if (!$realPath) {
 			throw new \Exception("Could not resolve directory to be deleted");
@@ -36,7 +36,7 @@ class Filesystem
 			throw new \Exception("Specified directory not inside basedir");
 		}
 		
-		$result = system("rm -r $dir/*");
+		$result = system("rm -r $projectRelativePath/*");
 
 		if ($result === false) {
 			throw new \Exception("Failed to delete directory");

@@ -14,12 +14,12 @@ $filesystem = $factory->getFilesystem();
 $twig = $factory->getTwig();
 
 $buildDir = __DIR__ . "/build";
-$filesystem->deleteTree($buildDir);
+//$filesystem->deleteTree($buildDir);
 
-$less = new \lessc;
-$css = $less->compileFile(BASEDIR . "/less/style.less");
-$success = file_put_contents("$buildDir/style.css", $css);
-if (!$success) { throw new \Exception("Failed to write CSS file"); }
+//$less = new \lessc;
+//$css = $less->compileFile(BASEDIR . "/less/style.less");
+//$success = file_put_contents("$buildDir/style.css", $css);
+//if (!$success) { throw new \Exception("Failed to write CSS file"); }
 
 $data = Yaml::parse(file_get_contents(__DIR__ . "/resume.yaml"));
 $data["cssVersion"] = hash("crc32", file_get_contents(__DIR__ . "/build/style.css"));

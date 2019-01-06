@@ -11,7 +11,7 @@ class StubFilesystem extends Filesystem
 		return $this->handleCall(__FUNCTION__, func_get_args());
 	}
 	
-	public function deleteTree($dir)
+	public function deleteTree($projectRelativePath)
 	{
 		return $this->handleCall(__FUNCTION__, func_get_args());
 	}

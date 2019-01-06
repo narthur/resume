@@ -12,16 +12,28 @@ abstract class TestCase extends \PHPUnit\Framework\TestCase
 	/** @var Filesystem|StubFilesystem $stubFilesystem */
 	protected $stubFilesystem;
 	
+	/** @var Less|StubLess $stubLess */
+	protected $stubLess;
+	
+	/** @var Twig|StubTwig $stubTwig */
+	protected $stubTwig;
+	
+	/** @var Yaml|StubYaml $stubYaml */
+	protected $stubYaml;
+	
 	protected function setUp()
 	{
 		parent::setUp();
 		
 		$this->baseDir = dir(__DIR__);
 		
-		$this->stubFilesystem = new StubFilesystem($this);
-		
 		$this->factory = new Factory();
 		
-		$this->factory->injectObject($this->stubFilesystem);
+		$this->factory->injectObjects(
+			$this->stubFilesystem = new StubFilesystem($this),
+			$this->stubLess = new StubLess($this),
+			$this->stubTwig = new StubTwig($this),
+			$this->stubYaml = new StubYaml($this)
+		);
 	}
 }

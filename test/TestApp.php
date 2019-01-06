@@ -23,6 +23,42 @@ final class TestApp extends \Resume\TestCase
 	{
 		$this->app->compile();
 		
-		$this->stubFilesystem->assertMethodCalled("deleteTree");
+		$this->stubFilesystem->assertMethodCalledWith(
+			"deleteTree",
+			"build"
+		);
+	}
+	
+	public function testCompilesLess()
+	{
+		$this->app->compile();
+		
+		$this->stubLess->assertMethodCalledWith(
+			"compileFile",
+			BASEDIR . "/less/style.less"
+		);
+	}
+	
+	public function testWritesCssFile()
+	{
+		$this->stubLess->setReturnValue("compileFile", "compiled_css");
+		
+		$this->app->compile();
+		
+		$this->stubFilesystem->assertMethodCalledWith(
+			"fileForceContents",
+			BASEDIR . "/build/style.css",
+			"compiled_css"
+		);
+	}
+	
+	public function testGetsYaml()
+	{
+		$this->app->compile();
+		
+		$this->stubFilesystem->assertMethodCalledWith(
+			"getFile",
+			BASEDIR . "/resume.yaml"
+		);
 	}
 }

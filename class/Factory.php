@@ -8,8 +8,9 @@ class Factory
 	
 	private $objects = [];
 	
-	public function injectObject($object) {
-		$this->objects[] = $object;
+	public function injectObjects(...$objects)
+	{
+		$this->objects = array_merge($this->objects, $objects);
 	}
 	
 	/**
@@ -69,10 +70,6 @@ class Factory
 			return end($matchingObjects);
 		}
 		
-		$object = new $class(...$dependencies);
-		
-		$this->objects[] = $object;
-		
-		return $object;
+		return $this->objects[] = new $class(...$dependencies);
 	}
 }
