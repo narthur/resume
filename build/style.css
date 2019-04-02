@@ -163,6 +163,11 @@ a {
 .organism-header h1 {
   margin-bottom: 0;
 }
+.organism-header h1 a,
+.organism-header h1 a:hover {
+  text-decoration: none;
+  color: inherit;
+}
 .organism-header .organism-header__taglines {
   margin-top: 0;
 }

@@ -79,7 +79,9 @@ skills:
 
 projects:
 - title: AudioVerse WordPress Plugin
-  url: https://github.com/AVORG/wp-avorg-plugin
+  url: project/av-wp-plugin.html
+  links:
+    GitHub: https://github.com/AVORG/wp-avorg-plugin
   image: ../images/portfolio/av-plugin-list.png
   tags:
   - wp-plugin-dev

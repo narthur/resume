@@ -63,8 +63,13 @@ class App
 		array_map(function ($twigPage) use ($data) {
 			$filename = pathinfo($twigPage, PATHINFO_FILENAME);
 			$relativePath = str_replace(BASEDIR . "/page/", "", $twigPage);
+			$relativeSegments = explode("/", $relativePath);
+			$relativeFolderCount = count($relativeSegments) - 1;
+			$relativeUrlPrefix = str_repeat("../", $relativeFolderCount);
 			$relativeDir = pathinfo($relativePath, PATHINFO_DIRNAME);
 			$outPath = BASEDIR . "/build/$relativeDir/$filename.html";
+
+			$data["relativeUrlPrefix"] = $relativeUrlPrefix;
 			
 			$html = $this->twig->renderTemplate($relativePath, $data);
 			$this->filesystem->fileForceContents($outPath, $html);
