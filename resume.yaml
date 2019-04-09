@@ -78,91 +78,101 @@ skills:
 - bash
 
 projects:
-- title: AudioVerse WordPress Plugin
-  url: project/av-wp-plugin.html
-  links:
-    GitHub: https://github.com/AVORG/wp-avorg-plugin
-  image: ../images/portfolio/av-plugin-list.png
-  tags:
-  - wp-plugin-dev
-  - php
-  - phpunit
-  - twig
-  - tdd
-  - docker
-  description: I’m currently working a series of contracts for AudioVerse building a WordPress plugin which
-    reproduces the functionality of their current website. Goals are to make the website easier to update for their
-    non-technical staff and to eventually take advantage of PWA browser APIs to reduce their reliance on maintaining
-    separate mobile apps. Locally I use Docker as <a href='https://github.com/AVORG/wp-avorg-dev'>my development
-    environment</a>.
-- title: Theme Front-End Component Library
-  image: ../images/portfolio/ThemePatternLibrary.png
-  tags:
-  - twig
-  - less
-  description: I architected and implemented a component library that allowed all our themes to share the most
-    complex pieces of code such as our carousel and navigation system. In the process I was able to turn this code
-    into components which were much more robust and customizable for the themes using them.
-- title: ACC1 system
-  url: http://random.adventistchurch.org/
-  image: ../images/portfolio/acc_large.png
-  tags:
-  - less
-  - twig
-  - php
-  - tdd
-  - database-design
-  description: I rebuilt the system SimpleUpdates maintains to generate free static websites for churches who don’t
-    currently have a website. This involved setting up a database, router, and a system to talk to eAdventist’s API
-    to retrieve churches that didn’t have a website, register them in the database so we would serve a website for
-    them, and then notify eAdventist so they could update their entry for that church in their database.
-- title: Lake Union Herald design & theme
-  url: https://www.lakeunionherald.org/?_bare
-  image: ../images/portfolio/luh.png
-  tags:
-  - sketch
-  - less
-  - twig
-  description: I worked with the customer to design and implement this custom theme.
-- title: MyMissionCenter theme
-  image: ../images/portfolio/mmc-theme.png
-  tags:
-  - less
-  - twig
-  description: This theme was designed by Evan Bambrick. I converted his static comps into a theme for our in-house
-    CMS.
-- title: MyMissionCenter product
-  image: ../images/portfolio/mmc-people.png
-  tags:
-  - react
-  - typescript
-  - scss
-  description: My role in this project was to design user interfaces and then build the React web components needed
-    to implement them.
-- title: Adventist School Connect theme
-  image: ../images/portfolio/ivy-theme.png
-  tags:
-  - twig
-  - less
-  - design
-  description: I both designed and built this theme.
-- title: HabitFree WordPress plugin
-  url: https://github.com/HabitFree/wp-accountability
-  image: ../images/portfolio/habitfree.org_goals_.png
-  tags:
-  - php
-  - tdd
-  - mailgun
-  - wp-plugin-dev
-- title: HabitFree WordPress theme
-  url: https://github.com/HabitFree/wp-hf-theme
-  image: ../images/portfolio/hf-theme.png
-  tags:
-  - php
-  - css
-  - wp-theme-dev
-- title: Young Disciple store
-  image: ../images/portfolio/yd-store.jpg
+  av_wp:
+    title: AudioVerse WordPress Plugin
+    url: project/av-wp-plugin.html
+    links:
+      GitHub: https://github.com/AVORG/wp-avorg-plugin
+    image: ../images/portfolio/av-plugin-list.png
+    tags:
+    - wp-plugin-dev
+    - php
+    - phpunit
+    - twig
+    - tdd
+    - docker
+    description: I’m currently working a series of contracts for AudioVerse building a WordPress plugin which
+      reproduces the functionality of their current website. Goals are to make the website easier to update for their
+      non-technical staff and to eventually take advantage of PWA browser APIs to reduce their reliance on maintaining
+      separate mobile apps. Locally I use Docker as <a href='https://github.com/AVORG/wp-avorg-dev'>my development
+      environment</a>.
+  pattern_library:
+    title: Theme Front-End Component Library
+    image: ../images/portfolio/ThemePatternLibrary.png
+    tags:
+    - twig
+    - less
+    description: I architected and implemented a component library that allowed all our themes to share the most
+      complex pieces of code such as our carousel and navigation system. In the process I was able to turn this code
+      into components which were much more robust and customizable for the themes using them.
+  acc1:
+    title: ACC1 system
+    url: http://random.adventistchurch.org/
+    image: ../images/portfolio/acc_large.png
+    tags:
+    - less
+    - twig
+    - php
+    - tdd
+    - database-design
+    description: I rebuilt the system SimpleUpdates maintains to generate free static websites for churches who don’t
+      currently have a website. This involved setting up a database, router, and a system to talk to eAdventist’s API
+      to retrieve churches that didn’t have a website, register them in the database so we would serve a website for
+      them, and then notify eAdventist so they could update their entry for that church in their database.
+  luh:
+    title: Lake Union Herald design & theme
+    url: https://www.lakeunionherald.org/?_bare
+    image: ../images/portfolio/luh.png
+    tags:
+    - sketch
+    - less
+    - twig
+    description: I worked with the customer to design and implement this custom theme.
+  mmc_theme:
+    title: MyMissionCenter theme
+    image: ../images/portfolio/mmc-theme.png
+    tags:
+    - less
+    - twig
+    description: This theme was designed by Evan Bambrick. I converted his static comps into a theme for our in-house
+      CMS.
+  mmc_code:
+    title: MyMissionCenter product
+    image: ../images/portfolio/mmc-people.png
+    tags:
+    - react
+    - typescript
+    - scss
+    description: My role in this project was to design user interfaces and then build the React web components needed
+      to implement them.
+  ivy:
+    title: Adventist School Connect theme
+    image: ../images/portfolio/ivy-theme.png
+    tags:
+    - twig
+    - less
+    - design
+    description: I both designed and built this theme.
+  hf_wp_plugin:
+    title: HabitFree WordPress plugin
+    url: https://github.com/HabitFree/wp-accountability
+    image: ../images/portfolio/habitfree.org_goals_.png
+    tags:
+    - php
+    - tdd
+    - mailgun
+    - wp-plugin-dev
+  hf_wp_theme:
+    title: HabitFree WordPress theme
+    url: https://github.com/HabitFree/wp-hf-theme
+    image: ../images/portfolio/hf-theme.png
+    tags:
+    - php
+    - css
+    - wp-theme-dev
+  yd_store:
+    title: Young Disciple store
+    image: ../images/portfolio/yd-store.jpg
 
 history:
 - organization: AudioVerse

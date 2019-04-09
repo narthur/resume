@@ -1,9 +1,19 @@
 {% extends "layout-base.twig" %}
 
+{% set pageData = data.projects.av_wp %}
+
 {% block content %}
+	{{ dump(pageData) }}
+
 	<h2>AudioVerse WP Plugin page</h2>
 
+	{% include "molecule-tagList.twig" with { tags: pageData.tags } only %}
+
 	<a href="https://github.com/AVORG/wp-avorg-plugin" target="_blank">The Repository</a>
+
+	<div class="summary">
+		{{ pageData.description|raw }}
+	</div>
 
 	<p>
 		I'm building a WordPress plugin for AudioVerse. I do all the planning and then I send them a contract and then

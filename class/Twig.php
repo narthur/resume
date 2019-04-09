@@ -11,6 +11,7 @@ class Twig {
       BASEDIR . "/page"
     ]);
     $this->twig = new \Twig_Environment($loader, array("debug" => true));
+    $this->twig->addExtension(new \Twig\Extension\DebugExtension());
   }
 
   public function renderTemplate($template, $data) {
