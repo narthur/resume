@@ -3,17 +3,17 @@
 {% set pageData = data.projects.av_wp %}
 
 {% block content %}
-	{{ dump(pageData) }}
-
-	<h2>AudioVerse WP Plugin page</h2>
+	<h2>WordPress Plugin for AudioVerse</h2>
 
 	{% include "molecule-tagList.twig" with { tags: pageData.tags } only %}
 
-	<a href="https://github.com/AVORG/wp-avorg-plugin" target="_blank">The Repository</a>
+	<ul>
+		{% for name, link in pageData.links %}
+			<li><a href="{{ link }}" target="_blank" title="{{ name }}">{{ name }}</a></li>
+		{% endfor %}
+	</ul>
 
-	<div class="summary">
-		{{ pageData.description|raw }}
-	</div>
+	{% include "molecule-summary.twig" with { content: pageData.description } only %}
 
 	<p>
 		I'm building a WordPress plugin for AudioVerse. I do all the planning and then I send them a contract and then

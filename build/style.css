@@ -14,20 +14,6 @@ a {
   margin: 0 auto;
   padding: 1rem;
 }
-.molecule-project {
-  margin-left: calc(.5rem + 2vw);
-  margin-bottom: 2rem;
-}
-.molecule-project h4 {
-  margin-bottom: .2em;
-}
-.molecule-tagList {
-  padding-left: 0;
-  margin-top: 0;
-}
-.molecule-tagList li {
-  display: inline-block;
-}
 .atom-tag {
   margin: 2px 0;
   background-color: #e1effb;
@@ -67,6 +53,55 @@ a {
 }
 .molecule-position .molecule-position__dates {
   margin-top: 0;
+}
+.molecule-project {
+  margin-left: calc(.5rem + 2vw);
+  margin-bottom: 2rem;
+}
+.molecule-project h4 {
+  margin-bottom: .2em;
+}
+.molecule-summary {
+  position: relative;
+  color: rgba(255,255,255,0.9);
+  padding: 2em;
+}
+.molecule-summary a {
+  color: #40a5ec;
+}
+.molecule-summary::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/luca-bravo-217276-unsplash.jpg") 50%;
+  background-size: cover;
+  z-index: -10;
+}
+.molecule-summary::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: -5;
+}
+.molecule-summary::before,
+.molecule-summary::after {
+  border-radius: 3px;
+}
+.molecule-tagList {
+  padding-left: 0;
+  margin-top: 0;
+}
+.molecule-tagList li {
+  display: inline-block;
 }
 .organism-acc {
   overflow: hidden;
@@ -156,8 +191,8 @@ a {
   transform-origin: bottom left;
 }
 .organism-header {
-  position: relative;
   overflow: hidden;
+  position: relative;
   color: rgba(255,255,255,0.9);
 }
 .organism-header h1 {
@@ -170,6 +205,9 @@ a {
 }
 .organism-header .organism-header__taglines {
   margin-top: 0;
+}
+.organism-header a {
+  color: #40a5ec;
 }
 .organism-header::before {
   content: "";
